@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <script>
+        // Função para ler valores de entrada
+        function lerValores() {
+            let A = parseFloat(prompt("Digite o valor de A:"));
+            let B = parseFloat(prompt("Digite o valor de B:"));
+            let C = parseFloat(prompt("Digite o valor de C:"));
+           
+            return { A, B, C };
+        }
+
+
+        // Função para calcular a soma e verificar se é menor que C
+        function calcularESomar(valores) {
+            let soma = valores.A + valores.B;
+            let resultado = "A soma de A e B é: " + soma + "<br>";
+
+
+            if (soma < valores.C) {
+                resultado += "A soma de A e B é menor que C.";
+            } else {
+                resultado += "A soma de A e B não é menor que C.";
+            }
+
+
+            return resultado;
+        }
+
+
+        // Função principal
+        function main() {
+            let valores = lerValores();
+            let resultado = calcularESomar(valores);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+
+        // Executa a função principal quando a página é carregada
+        window.onload = main;
+    </script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p id="resultado"></p>
+</body>
+</html>

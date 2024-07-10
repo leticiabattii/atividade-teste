@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordenação Decrescente</title>
+    <script>
+        // Função para ler os valores de entrada
+        function lerValores() {
+            let A = parseInt(prompt("Digite o primeiro valor inteiro:"));
+            let B = parseInt(prompt("Digite o segundo valor inteiro:"));
+            let C = parseInt(prompt("Digite o terceiro valor inteiro:"));
+
+
+            return [A, B, C];
+        }
+
+
+        // Função para ordenar os valores em ordem decrescente
+        function ordenarDecrescente(valores) {
+            return valores.sort((a, b) => b - a);
+        }
+
+
+        // Função para exibir o resultado
+        function exibirResultado(valoresOrdenados) {
+            document.getElementById("resultado").innerText =
+                "Valores em ordem decrescente: " + valoresOrdenados.join(", ");
+        }
+
+
+        // Função principal
+        function main() {
+            let valores = lerValores();
+            let valoresOrdenados = ordenarDecrescente(valores);
+            exibirResultado(valoresOrdenados);
+        }
+
+
+        // Executa a função principal quando a página é carregada
+        window.onload = main;
+    </script>
+</head>
+<body>
+    <h1>Ordenação Decrescente</h1>
+    <p id="resultado"></p>
+</body>
+</html>

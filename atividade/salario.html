@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Salários</title>
+    <script>
+        // Função para ler os valores de entrada
+        function lerValores() {
+            // Valor do salário mínimo fixado
+            let salarioMinimo = 1293.20;
+            let salarioUsuario = parseFloat(prompt("Digite o valor do seu salário:"));
+           
+            return { salarioMinimo, salarioUsuario };
+        }
+
+
+        // Função para calcular quantos salários mínimos o usuário ganha
+        function calcularSalarios(valores) {
+            let quantidadeSalarios = valores.salarioUsuario / valores.salarioMinimo;
+            return quantidadeSalarios.toFixed(2);
+        }
+
+
+        // Função para exibir o resultado
+        function exibirResultado(quantidadeSalarios) {
+            document.getElementById("resultado").innerText =
+                "Você ganha " + quantidadeSalarios + " salários mínimos.";
+        }
+
+
+        // Função principal
+        function main() {
+            let valores = lerValores();
+            let quantidadeSalarios = calcularSalarios(valores);
+            exibirResultado(quantidadeSalarios);
+        }
+
+
+        // Executa a função principal quando a página é carregada
+        window.onload = main;
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Salários</h1>
+    <p id="resultado"></p>
+</body>
+</html>

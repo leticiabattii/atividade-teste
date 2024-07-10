@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <script>
+        // Função para ler valores de entrada
+        function lerValores() {
+            let A = parseInt(prompt("Digite o valor de A:"));
+            let B = parseInt(prompt("Digite o valor de B:"));
+           
+            return { A, B };
+        }
+
+
+        // Função para calcular a soma ou multiplicação de A e B
+        function calcularEExibirResultado(valores) {
+            let C;
+            if (valores.A === valores.B) {
+                C = valores.A + valores.B;
+            } else {
+                C = valores.A * valores.B;
+            }
+            document.getElementById("resultado").innerText = "O valor de C é: " + C;
+        }
+
+
+        // Função principal
+        function main() {
+            let valores = lerValores();
+            calcularEExibirResultado(valores);
+        }
+
+
+        // Executa a função principal quando a página é carregada
+        window.onload = main;
+    </script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p id="resultado"></p>
+</body>
+</html>

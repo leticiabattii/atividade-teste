@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antecessor e Sucessor</title>
+    <script>
+        // Função para ler o valor de entrada
+        function lerValor() {
+            let numero = parseInt(prompt("Digite um número inteiro:"));
+            return numero;
+        }
+
+
+        // Função para calcular o antecessor e sucessor
+        function calcularAntecessorESucessor(numero) {
+            let antecessor = numero - 1;
+            let sucessor = numero + 1;
+            return { antecessor, sucessor };
+        }
+
+
+        // Função para exibir o resultado
+        function exibirResultado(antecessor, sucessor) {
+            document.getElementById("resultado").innerHTML =
+                "O antecessor de " + (antecessor + 1) + " é " + antecessor + "<br>" +
+                "O sucessor de " + (sucessor - 1) + " é " + sucessor;
+        }
+
+
+        // Função principal
+        function main() {
+            let numero = lerValor();
+            let { antecessor, sucessor } = calcularAntecessorESucessor(numero);
+            exibirResultado(antecessor, sucessor);
+        }
+
+
+        // Executa a função principal quando a página é carregada
+        window.onload = main;
+    </script>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <p id="resultado"></p>
+</body>
+</html>
